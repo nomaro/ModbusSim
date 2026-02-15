@@ -14,7 +14,7 @@ docker-compose up
 
 Assumptions made below:
 
-1. The simulator server will use `/dev/ttyS0` - can be adjusted in `config/test.conf`
+1. The simulator server will use `/dev/ttyMODBUS` - can be adjusted in `config/test.conf`
 2. The example client will use `/dev/ttyUSB0` - can also be adjust but is currently hardcoded in the slightly modified version of the example client written by Luc Jean and included with modbus-tk.
 3. REST api served on port `5002`.
 
@@ -23,8 +23,9 @@ Using a null modem emulator works as well.
 To start the simulators REST server:
 
 ```sh
-git clone https://github.com/emdem/ModbusSim.git
+git clone https://github.com/nomaro/ModbusSim.git
 cd ModbusSim/src
+git clone https://github.com/ljean/modbus-tk.git
 sudo python3 server.py
 ```
 
