@@ -605,13 +605,13 @@ def unhandled_exception(e):
 
 def parse_args():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--config', type=str, default='../config/test.conf', help='modbus simulator configuration file')
     parser.add_argument('-i', '--slave_id', type=str, default=1, help='slave id for the modbus device')
     parser.add_argument('-m', '--mode', type=str, choices=('rtu', 'tcp'), default='rtu', help='modbus mode')
     parser.add_argument('-P', '--port', type=int, default=5005, help='IP port if using TCP mode')
-    parser.add_argument('-p', '--rtu_parity', type=str, choices=('even','odd','none'), default='none', help='modbus over serial parity')
+    parser.add_argument('-p', '--rtu_parity', type=str, choices=('even','odd','none'), default='even', help='modbus over serial parity')
     parser.add_argument('-b', '--rtu_baud', type=int, default=9600, help='baud rate for modbus')
     parser.add_argument('-t', '--hostname', type=str, default='127.0.0.1', help='IP hostname or address')
-    parser.add_argument('-c', '--config', type=str, default='../config/test.conf', help='modbus simulator configuration file')
     parser.add_argument('-s', '--serial', type=str, default='/dev/ttyMODBUS', help='serial port on which to sim')
     parser.add_argument('-n', '--slave_count', type=int, default=0, help='Number of slave devices to create')
     parser.add_argument('-d', '--slave_start_id', type=int, default=1, help='Starting id of slaves')
