@@ -25,7 +25,7 @@ To start the simulators REST server:
 ```sh
 git clone https://github.com/nomaro/ModbusSim.git
 cd ModbusSim/src
-git clone https://github.com/ljean/modbus-tk.git
+sudo apt install python3-flask python3-serial python3-flasgger
 sudo python3 server.py
 ```
 
